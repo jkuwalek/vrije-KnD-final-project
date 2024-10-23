@@ -2,7 +2,7 @@
 channels = ["conda-forge"]
 description = "Add a short description here"
 name = "vrije-KnD-final-project"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64","win-64"]
 version = "0.1.0"
 
 [tasks]
@@ -13,3 +13,4 @@ numpy = ">=2.1.2,<3"
 pandas = ">=2.2.3,<3"
 jupyter = ">=1.1.1,<2"
 matplotlib = ">=3.9.2,<4"
+scipy = ">=1.14.1,<2"

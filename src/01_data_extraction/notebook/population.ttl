@@ -1,0 +1,794 @@
+@prefix epi: <http://github.com/jkuwalek/vrije-KnD-final-project/ontology/> .
+@prefix ns1: <http://www.w3.org/2003/11/swrl#> .
+@prefix ns2: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://github.com/jkuwalek/vrije-KnD-final-project/ontology/'S-Hertogenbosch> rdfs:label "'s-Hertogenbosch"@en,
+        "'s-Hertogenbosch"@nl ;
+    epi:populatedBy <http://github.com/jkuwalek/vrije-KnD-final-project/ontology/PopulationOf'S-Hertogenbosch> .
+
+epi:Almere rdfs:label "Almere"@en,
+        "Almere"@nl ;
+    epi:populatedBy epi:PopulationOfAlmere .
+
+epi:AlphenAanDenRijn rdfs:label "Alphen aan den Rijn"@en,
+        "Alphen aan den Rijn"@nl ;
+    epi:populatedBy epi:PopulationOfAlphenAanDenRijn .
+
+epi:Amsterdam rdfs:label "Amsterdam"@en,
+        "Amsterdam"@nl ;
+    epi:populatedBy epi:PopulationOfAmsterdam .
+
+epi:Apeldoorn rdfs:label "Apeldoorn"@en,
+        "Apeldoorn"@nl ;
+    epi:populatedBy epi:PopulationOfApeldoorn .
+
+epi:Appingedam rdfs:label "Appingedam"@en,
+        "Appingedam"@nl ;
+    epi:populatedBy epi:PopulationOfAppingedam .
+
+epi:Arnhem rdfs:label "Arnhem"@en,
+        "Arnhem"@nl ;
+    epi:populatedBy epi:PopulationOfArnhem .
+
+epi:Assen rdfs:label "Assen"@en,
+        "Assen"@nl ;
+    epi:populatedBy epi:PopulationOfAssen .
+
+epi:BergenOpZoom rdfs:label "Bergen op Zoom"@en,
+        "Bergen op Zoom"@nl ;
+    epi:populatedBy epi:PopulationOfBergenOpZoom .
+
+epi:Breda rdfs:label "Breda"@en,
+        "Breda"@nl ;
+    epi:populatedBy epi:PopulationOfBreda .
+
+epi:Covid-19 a owl:NamedIndividual .
+
+epi:Culemborg rdfs:label "Culemborg"@en,
+        "Culemborg"@nl ;
+    epi:populatedBy epi:PopulationOfCulemborg .
+
+epi:Delfzijl rdfs:label "Delfzijl"@en,
+        "Delfzijl"@nl ;
+    epi:populatedBy epi:PopulationOfDelfzijl .
+
+epi:DenHaag rdfs:label "The Hague"@en,
+        "Den Haag"@nl ;
+    epi:populatedBy epi:PopulationOfDenHaag .
+
+epi:Doesburg rdfs:label "Doesburg"@en,
+        "Doesburg"@nl ;
+    epi:populatedBy epi:PopulationOfDoesburg .
+
+epi:Dordrecht rdfs:label "Dordrecht"@en,
+        "Dordrecht"@nl ;
+    epi:populatedBy epi:PopulationOfDordrecht .
+
+epi:Dorestad rdfs:label "Dorestad"@en,
+        "Dorestad"@nl ;
+    epi:populatedBy epi:PopulationOfDorestad .
+
+epi:Edam rdfs:label "Edam"@en,
+        "Edam"@nl ;
+    epi:populatedBy epi:PopulationOfEdam .
+
+epi:Ede rdfs:label "Ede"@en,
+        "Ede"@nl ;
+    epi:populatedBy epi:PopulationOfEde .
+
+epi:Enkhuizen rdfs:label "Enkhuizen"@en,
+        "Enkhuizen"@nl ;
+    epi:populatedBy epi:PopulationOfEnkhuizen .
+
+epi:Groningen rdfs:label "Groningen"@en,
+        "Groningen"@nl ;
+    epi:populatedBy epi:PopulationOfGroningen .
+
+epi:Haarlem rdfs:label "Haarlem"@en,
+        "Haarlem"@nl ;
+    epi:populatedBy epi:PopulationOfHaarlem .
+
+epi:Hattem rdfs:label "Hattem"@en,
+        "Hattem"@nl ;
+    epi:populatedBy epi:PopulationOfHattem .
+
+epi:Heerenveen rdfs:label "Heerenveen"@en,
+        "Heerenveen"@nl ;
+    epi:populatedBy epi:PopulationOfHeerenveen .
+
+epi:Helmond rdfs:label "Helmond"@en,
+        "Helmond"@nl ;
+    epi:populatedBy epi:PopulationOfHelmond .
+
+epi:Hengelo rdfs:label "Hengelo"@en,
+        "Hengelo"@nl ;
+    epi:populatedBy epi:PopulationOfHengelo .
+
+epi:Ijsselstein rdfs:label "IJsselstein"@en,
+        "IJsselstein"@nl ;
+    epi:populatedBy epi:PopulationOfIjsselstein .
+
+epi:Kampen rdfs:label "Kampen"@en,
+        "Kampen"@nl ;
+    epi:populatedBy epi:PopulationOfKampen .
+
+epi:LargeCity a owl:Class ;
+    rdfs:subClassOf epi:City ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( epi:City [ a owl:Restriction ;
+                        owl:onProperty epi:populatedBy ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( epi:Population [ a owl:Restriction ;
+                                            owl:onProperty epi:size ;
+                                            owl:someValuesFrom [ a rdfs:Datatype ;
+                                                    owl:onDatatype xsd:int ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive "500000"^^xsd:int ] ) ] ] ) ] ] ) ] .
+
+epi:Leerdam rdfs:label "Leerdam"@en,
+        "Leerdam"@nl ;
+    epi:populatedBy epi:PopulationOfLeerdam .
+
+epi:Leeuwarden rdfs:label "Leeuwarden"@en,
+        "Leeuwarden"@nl ;
+    epi:populatedBy epi:PopulationOfLeeuwarden .
+
+epi:Leiden rdfs:label "Leiden"@en,
+        "Leiden"@nl ;
+    epi:populatedBy epi:PopulationOfLeiden .
+
+epi:Lelystad rdfs:label "Lelystad"@en,
+        "Lelystad"@nl ;
+    epi:populatedBy epi:PopulationOfLelystad .
+
+epi:Maassluis rdfs:label "Maassluis"@en,
+        "Maassluis"@nl ;
+    epi:populatedBy epi:PopulationOfMaassluis .
+
+epi:MediumCity a owl:Class ;
+    rdfs:subClassOf epi:City ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( epi:City [ a owl:Restriction ;
+                        owl:onProperty epi:populatedBy ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( epi:Population [ a owl:Restriction ;
+                                            owl:onProperty epi:size ;
+                                            owl:someValuesFrom [ a rdfs:Datatype ;
+                                                    owl:onDatatype xsd:int ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive "100000"^^xsd:int ] [ xsd:maxExclusive "500000"^^xsd:int ] ) ] ] ) ] ] ) ] .
+
+epi:Meppel rdfs:label "Meppel"@en,
+        "Meppel"@nl ;
+    epi:populatedBy epi:PopulationOfMeppel .
+
+epi:Middelburg rdfs:label "Middelburg"@en,
+        "Middelburg"@nl ;
+    epi:populatedBy epi:PopulationOfMiddelburg .
+
+epi:Purmerend rdfs:label "Purmerend"@en,
+        "Purmerend"@nl ;
+    epi:populatedBy epi:PopulationOfPurmerend .
+
+epi:Reimerswaal rdfs:label "Reimerswaal"@en,
+        "Reimerswaal"@nl ;
+    epi:populatedBy epi:PopulationOfReimerswaal .
+
+epi:Rijswijk rdfs:label "Rijswijk"@en,
+        "Rijswijk"@nl ;
+    epi:populatedBy epi:PopulationOfRijswijk .
+
+epi:Roermond rdfs:label "Roermond"@en,
+        "Roermond"@nl ;
+    epi:populatedBy epi:PopulationOfRoermond .
+
+epi:Roosendaal rdfs:label "Roosendaal"@en,
+        "Roosendaal"@nl ;
+    epi:populatedBy epi:PopulationOfRoosendaal .
+
+epi:Rosmalen rdfs:label "Rosmalen"@en,
+        "Rosmalen"@nl ;
+    epi:populatedBy epi:PopulationOfRosmalen .
+
+epi:Rotterdam rdfs:label "Rotterdam"@en,
+        "Rotterdam"@nl ;
+    epi:populatedBy epi:PopulationOfRotterdam .
+
+epi:Schiedam rdfs:label "Schiedam"@en,
+        "Schiedam"@nl ;
+    epi:populatedBy epi:PopulationOfSchiedam .
+
+epi:Sittard rdfs:label "Sittard"@en,
+        "Sittard"@nl ;
+    epi:populatedBy epi:PopulationOfSittard .
+
+epi:SmallCity a owl:Class ;
+    rdfs:subClassOf epi:City ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( epi:City [ a owl:Restriction ;
+                        owl:onProperty epi:populatedBy ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( epi:Population [ a owl:Restriction ;
+                                            owl:onProperty epi:size ;
+                                            owl:someValuesFrom [ a rdfs:Datatype ;
+                                                    owl:onDatatype xsd:int ;
+                                                    owl:withRestrictions ( [ xsd:maxExclusive "100000"^^xsd:int ] ) ] ] ) ] ] ) ] .
+
+epi:Sneek rdfs:label "Sneek"@en,
+        "Sneek"@nl ;
+    epi:populatedBy epi:PopulationOfSneek .
+
+epi:Utrecht rdfs:label "Utrecht"@en,
+        "Utrecht"@nl ;
+    epi:populatedBy epi:PopulationOfUtrecht .
+
+epi:Venlo rdfs:label "Venlo"@en,
+        "Venlo"@nl ;
+    epi:populatedBy epi:PopulationOfVenlo .
+
+epi:Vianen rdfs:label "Vianen"@en,
+        "Vianen"@nl ;
+    epi:populatedBy epi:PopulationOfVianen .
+
+epi:Vlaardingen rdfs:label "Vlaardingen"@en,
+        "Vlaardingen"@nl ;
+    epi:populatedBy epi:PopulationOfVlaardingen .
+
+epi:Voorburg rdfs:label "Voorburg"@en,
+        "Voorburg"@nl ;
+    epi:populatedBy epi:PopulationOfVoorburg .
+
+epi:Wageningen rdfs:label "Wageningen"@en,
+        "Wageningen"@nl ;
+    epi:populatedBy epi:PopulationOfWageningen .
+
+epi:Weesp rdfs:label "Weesp"@en,
+        "Weesp"@nl ;
+    epi:populatedBy epi:PopulationOfWeesp .
+
+epi:Zoetermeer rdfs:label "Zoetermeer"@en,
+        "Zoetermeer"@nl ;
+    epi:populatedBy epi:PopulationOfZoetermeer .
+
+epi:Zutphen rdfs:label "Zutphen"@en,
+        "Zutphen"@nl ;
+    epi:populatedBy epi:PopulationOfZutphen .
+
+ns2:isRuleEnabled a owl:AnnotationProperty .
+
+epi:Disease a owl:Class .
+
+<http://github.com/jkuwalek/vrije-KnD-final-project/ontology/PopulationOf'S-Hertogenbosch> rdfs:label "Population of 's-Hertogenbosch"@en,
+        "Population of 's-Hertogenbosch"@nl ;
+    epi:size "158753"^^xsd:int .
+
+epi:PopulationOfAlmere rdfs:label "Population of Almere"@en,
+        "Population of Almere"@nl ;
+    epi:size "214715"^^xsd:int .
+
+epi:PopulationOfAlphenAanDenRijn rdfs:label "Population of Alphen aan den Rijn"@en,
+        "Population of Alphen aan den Rijn"@nl ;
+    epi:size "71975"^^xsd:int .
+
+epi:PopulationOfAmsterdam rdfs:label "Population of Amsterdam"@en,
+        "Population of Amsterdam"@nl ;
+    epi:size "921468"^^xsd:int .
+
+epi:PopulationOfApeldoorn rdfs:label "Population of Apeldoorn"@en,
+        "Population of Apeldoorn"@nl ;
+    epi:size "138945"^^xsd:int .
+
+epi:PopulationOfAppingedam rdfs:label "Population of Appingedam"@en,
+        "Population of Appingedam"@nl ;
+    epi:size "11721"^^xsd:int .
+
+epi:PopulationOfArnhem rdfs:label "Population of Arnhem"@en,
+        "Population of Arnhem"@nl ;
+    epi:size "164096"^^xsd:int .
+
+epi:PopulationOfAssen rdfs:label "Population of Assen"@en,
+        "Population of Assen"@nl ;
+    epi:size "68836"^^xsd:int .
+
+epi:PopulationOfBergenOpZoom rdfs:label "Population of Bergen op Zoom"@en,
+        "Population of Bergen op Zoom"@nl ;
+    epi:size "66445"^^xsd:int .
+
+epi:PopulationOfBreda rdfs:label "Population of Breda"@en,
+        "Population of Breda"@nl ;
+    epi:size "183456"^^xsd:int .
+
+epi:PopulationOfCulemborg rdfs:label "Population of Culemborg"@en,
+        "Population of Culemborg"@nl ;
+    epi:size "29121"^^xsd:int .
+
+epi:PopulationOfDelfzijl rdfs:label "Population of Delfzijl"@en,
+        "Population of Delfzijl"@nl ;
+    epi:size "24716"^^xsd:int .
+
+epi:PopulationOfDenHaag rdfs:label "Population of The Hague"@en,
+        "Population of Den Haag"@nl ;
+    epi:size "548320"^^xsd:int .
+
+epi:PopulationOfDoesburg rdfs:label "Population of Doesburg"@en,
+        "Population of Doesburg"@nl ;
+    epi:size "11064"^^xsd:int .
+
+epi:PopulationOfDordrecht rdfs:label "Population of Dordrecht"@en,
+        "Population of Dordrecht"@nl ;
+    epi:size "121434"^^xsd:int .
+
+epi:PopulationOfDorestad rdfs:label "Population of Dorestad"@en,
+        "Population of Dorestad"@nl ;
+    epi:size "10000"^^xsd:int .
+
+epi:PopulationOfEdam rdfs:label "Population of Edam"@en,
+        "Population of Edam"@nl ;
+    epi:size "18828"^^xsd:int .
+
+epi:PopulationOfEde rdfs:label "Population of Ede"@en,
+        "Population of Ede"@nl ;
+    epi:size "72460"^^xsd:int .
+
+epi:PopulationOfEnkhuizen rdfs:label "Population of Enkhuizen"@en,
+        "Population of Enkhuizen"@nl ;
+    epi:size "18637"^^xsd:int .
+
+epi:PopulationOfGroningen rdfs:label "Population of Groningen"@en,
+        "Population of Groningen"@nl ;
+    epi:size "238147"^^xsd:int .
+
+epi:PopulationOfHaarlem rdfs:label "Population of Haarlem"@en,
+        "Population of Haarlem"@nl ;
+    epi:size "162543"^^xsd:int .
+
+epi:PopulationOfHattem rdfs:label "Population of Hattem"@en,
+        "Population of Hattem"@nl ;
+    epi:size "12228"^^xsd:int .
+
+epi:PopulationOfHeerenveen rdfs:label "Population of Heerenveen"@en,
+        "Population of Heerenveen"@nl ;
+    epi:size "28497"^^xsd:int .
+
+epi:PopulationOfHelmond rdfs:label "Population of Helmond"@en,
+        "Population of Helmond"@nl ;
+    epi:size "92627"^^xsd:int .
+
+epi:PopulationOfHengelo rdfs:label "Population of Hengelo"@en,
+        "Population of Hengelo"@nl ;
+    epi:size "81049"^^xsd:int .
+
+epi:PopulationOfIjsselstein rdfs:label "Population of IJsselstein"@en,
+        "Population of IJsselstein"@nl ;
+    epi:size "33819"^^xsd:int .
+
+epi:PopulationOfKampen rdfs:label "Population of Kampen"@en,
+        "Population of Kampen"@nl ;
+    epi:size "52398"^^xsd:int .
+
+epi:PopulationOfLeerdam rdfs:label "Population of Leerdam"@en,
+        "Population of Leerdam"@nl ;
+    epi:size "1831"^^xsd:int,
+        "2387"^^xsd:int,
+        "2597"^^xsd:int,
+        "2665"^^xsd:int,
+        "2791"^^xsd:int,
+        "2994"^^xsd:int,
+        "3380"^^xsd:int,
+        "4082"^^xsd:int,
+        "5042"^^xsd:int,
+        "6717"^^xsd:int,
+        "8661"^^xsd:int,
+        "8952"^^xsd:int,
+        "9781"^^xsd:int,
+        "11619"^^xsd:int,
+        "13661"^^xsd:int,
+        "16098"^^xsd:int,
+        "19381"^^xsd:int,
+        "20692"^^xsd:int,
+        "20708"^^xsd:int,
+        "20878"^^xsd:int,
+        "20905"^^xsd:int,
+        "21030"^^xsd:int .
+
+epi:PopulationOfLeeuwarden rdfs:label "Population of Leeuwarden"@en,
+        "Population of Leeuwarden"@nl ;
+    epi:size "93765"^^xsd:int .
+
+epi:PopulationOfLeiden rdfs:label "Population of Leiden"@en,
+        "Population of Leiden"@nl ;
+    epi:size "124093"^^xsd:int .
+
+epi:PopulationOfLelystad rdfs:label "Population of Lelystad"@en,
+        "Population of Lelystad"@nl ;
+    epi:size "83033"^^xsd:int .
+
+epi:PopulationOfMaassluis rdfs:label "Population of Maassluis"@en,
+        "Population of Maassluis"@nl ;
+    epi:size "33567"^^xsd:int .
+
+epi:PopulationOfMeppel rdfs:label "Population of Meppel"@en,
+        "Population of Meppel"@nl ;
+    epi:size "34386"^^xsd:int .
+
+epi:PopulationOfMiddelburg rdfs:label "Population of Middelburg"@en,
+        "Population of Middelburg"@nl ;
+    epi:size "49956"^^xsd:int .
+
+epi:PopulationOfPurmerend rdfs:label "Population of Purmerend"@en,
+        "Population of Purmerend"@nl ;
+    epi:size "81515"^^xsd:int .
+
+epi:PopulationOfReimerswaal rdfs:label "Population of Reimerswaal"@en,
+        "Population of Reimerswaal"@nl ;
+    epi:size "0"^^xsd:int .
+
+epi:PopulationOfRijswijk rdfs:label "Population of Rijswijk"@en,
+        "Population of Rijswijk"@nl ;
+    epi:size "55220"^^xsd:int .
+
+epi:PopulationOfRoermond rdfs:label "Population of Roermond"@en,
+        "Population of Roermond"@nl ;
+    epi:size "57308"^^xsd:int .
+
+epi:PopulationOfRoosendaal rdfs:label "Population of Roosendaal"@en,
+        "Population of Roosendaal"@nl ;
+    epi:size "76959"^^xsd:int .
+
+epi:PopulationOfRosmalen rdfs:label "Population of Rosmalen"@en,
+        "Population of Rosmalen"@nl ;
+    epi:size "31219"^^xsd:int .
+
+epi:PopulationOfRotterdam rdfs:label "Population of Rotterdam"@en,
+        "Population of Rotterdam"@nl ;
+    epi:size "664311"^^xsd:int .
+
+epi:PopulationOfSchiedam rdfs:label "Population of Schiedam"@en,
+        "Population of Schiedam"@nl ;
+    epi:size "79279"^^xsd:int .
+
+epi:PopulationOfSittard rdfs:label "Population of Sittard"@en,
+        "Population of Sittard"@nl ;
+    epi:size "37085"^^xsd:int .
+
+epi:PopulationOfSneek rdfs:label "Population of Sneek"@en,
+        "Population of Sneek"@nl ;
+    epi:size "33855"^^xsd:int .
+
+epi:PopulationOfUtrecht rdfs:label "Population of Utrecht"@en,
+        "Population of Utrecht"@nl ;
+    epi:size "308990"^^xsd:int .
+
+epi:PopulationOfVenlo rdfs:label "Population of Venlo"@en,
+        "Population of Venlo"@nl ;
+    epi:size "37663"^^xsd:int .
+
+epi:PopulationOfVianen rdfs:label "Population of Vianen"@en,
+        "Population of Vianen"@nl ;
+    epi:size "19967"^^xsd:int .
+
+epi:PopulationOfVlaardingen rdfs:label "Population of Vlaardingen"@en,
+        "Population of Vlaardingen"@nl ;
+    epi:size "73924"^^xsd:int .
+
+epi:PopulationOfVoorburg rdfs:label "Population of Voorburg"@en,
+        "Population of Voorburg"@nl ;
+    epi:size "43090"^^xsd:int .
+
+epi:PopulationOfWageningen rdfs:label "Population of Wageningen"@en,
+        "Population of Wageningen"@nl ;
+    epi:size "39635"^^xsd:int .
+
+epi:PopulationOfWeesp rdfs:label "Population of Weesp"@en,
+        "Population of Weesp"@nl ;
+    epi:size "19334"^^xsd:int .
+
+epi:PopulationOfZoetermeer rdfs:label "Population of Zoetermeer"@en,
+        "Population of Zoetermeer"@nl ;
+    epi:size "125267"^^xsd:int .
+
+epi:PopulationOfZutphen rdfs:label "Population of Zutphen"@en,
+        "Population of Zutphen"@nl ;
+    epi:size "47423"^^xsd:int .
+
+epi:TimePoint a owl:Class .
+
+epi:TotalPopulation a owl:Class ;
+    rdfs:subClassOf epi:Population .
+
+epi:infectedBy a owl:ObjectProperty ;
+    rdfs:domain epi:InfectedPopulation ;
+    rdfs:range epi:InfectiousDisease .
+
+epi:percentageOfPopulation a owl:DatatypeProperty ;
+    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#PartialPopulation> .
+
+epi:InfectedPopulation a owl:Class ;
+    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PartialPopulation> .
+
+epi:InfectiousDisease a owl:Class ;
+    rdfs:subClassOf epi:Disease .
+
+epi:c a ns1:Variable .
+
+epi:measuredPopulation a owl:ObjectProperty ;
+    rdfs:domain epi:Measurement ;
+    rdfs:range epi:InfectedPopulation .
+
+<http://www.w3.org/2002/07/percentage> a ns1:Variable .
+
+<http://www.w3.org/2002/07/temp> a ns1:Variable .
+
+<http://www.w3.org/2002/07/x> a ns1:Variable .
+
+<http://www.w3.org/2002/07/y> a ns1:Variable .
+
+epi:dp a ns1:Variable .
+
+epi:measuredDisease a owl:ObjectProperty ;
+    rdfs:domain epi:Measurement ;
+    rdfs:range epi:InfectiousDisease .
+
+epi:measuredIn a owl:ObjectProperty ;
+    rdfs:domain epi:Measurement ;
+    rdfs:range epi:City .
+
+epi:measurement a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range epi:Measurement .
+
+epi:populationOf a owl:ObjectProperty ;
+    rdfs:domain epi:Population ;
+    rdfs:range epi:City .
+
+<http://www.co-ode.org/ontologies/ont.owl#PartialPopulation> a owl:Class ;
+    rdfs:subClassOf epi:Population .
+
+<http://www.w3.org/2002/07/ip> a ns1:Variable .
+
+<http://www.w3.org/2002/07/p> a ns1:Variable .
+
+<http://www.w3.org/2002/07/pp> a ns1:Variable .
+
+epi:populatedBy a owl:ObjectProperty ;
+    rdfs:domain epi:City ;
+    rdfs:range epi:TotalPopulation .
+
+epi:size a owl:DatatypeProperty ;
+    rdfs:domain epi:Population ;
+    rdfs:range xsd:int .
+
+epi:timePoint a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range epi:TimePoint .
+
+epi:Measurement a owl:Class .
+
+<http://www.w3.org/2002/07/d> a ns1:Variable .
+
+<http://www.w3.org/2002/07/tp> a ns1:Variable .
+
+epi:Population a owl:Class .
+
+<http://www.w3.org/2002/07/c> a ns1:Variable .
+
+epi:City a owl:Class .
+
+<http://www.w3.org/2002/07/m> a ns1:Variable .
+
+[] a owl:Ontology .
+
+[] a ns1:Imp ;
+    rdfs:label "Property chain population of" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/ip> ;
+                    ns1:propertyPredicate epi:measuredPopulation ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:IndividualPropertyAtom ;
+                            ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                            ns1:argument2 <http://www.w3.org/2002/07/c> ;
+                            ns1:propertyPredicate epi:measuredIn ] ;
+                    rdf:rest () ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/ip> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/c> ;
+                    ns1:propertyPredicate epi:populationOf ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "Property chain timepoint" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/c> ;
+                    ns1:propertyPredicate epi:measuredIn ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:IndividualPropertyAtom ;
+                            ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                            ns1:argument2 <http://www.w3.org/2002/07/tp> ;
+                            ns1:propertyPredicate epi:timePoint ] ;
+                    rdf:rest () ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/c> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/tp> ;
+                    ns1:propertyPredicate epi:timePoint ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "1 way inverse populatedBy populationOf" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "When a city is populated by a population, then the population is a populationOf the City, but when a population is a populationOf a city, the city is not automatically populated by the population." ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/c> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/p> ;
+                    ns1:propertyPredicate epi:populatedBy ] ;
+            rdf:rest () ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/p> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/c> ;
+                    ns1:propertyPredicate epi:populationOf ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "1 way inverse of measuredAt" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/tp> ;
+                    ns1:propertyPredicate epi:timePoint ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:ClassAtom ;
+                            ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                            ns1:classPredicate epi:Measurement ] ;
+                    rdf:rest () ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/tp> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/m> ;
+                    ns1:propertyPredicate epi:measurement ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "1way inverse of measuredIn" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:ClassAtom ;
+                    ns1:argument1 epi:dp ;
+                    ns1:classPredicate epi:Measurement ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:IndividualPropertyAtom ;
+                            ns1:argument1 epi:dp ;
+                            ns1:argument2 epi:c ;
+                            ns1:propertyPredicate epi:measuredIn ] ;
+                    rdf:rest () ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 epi:c ;
+                    ns1:argument2 epi:dp ;
+                    ns1:propertyPredicate epi:measurement ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "Percentage of population calculation" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:ClassAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/pp> ;
+                    ns1:classPredicate <http://www.co-ode.org/ontologies/ont.owl#PartialPopulation> ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:DatavaluedPropertyAtom ;
+                            ns1:argument1 <http://www.w3.org/2002/07/pp> ;
+                            ns1:argument2 <http://www.w3.org/2002/07/x> ;
+                            ns1:propertyPredicate epi:size ] ;
+                    rdf:rest [ a ns1:AtomList ;
+                            rdf:first [ a ns1:IndividualPropertyAtom ;
+                                    ns1:argument1 <http://www.w3.org/2002/07/pp> ;
+                                    ns1:argument2 <http://www.w3.org/2002/07/c> ;
+                                    ns1:propertyPredicate epi:populationOf ] ;
+                            rdf:rest [ a ns1:AtomList ;
+                                    rdf:first [ a ns1:IndividualPropertyAtom ;
+                                            ns1:argument1 <http://www.w3.org/2002/07/c> ;
+                                            ns1:argument2 <http://www.w3.org/2002/07/p> ;
+                                            ns1:propertyPredicate epi:populatedBy ] ;
+                                    rdf:rest [ a ns1:AtomList ;
+                                            rdf:first [ a ns1:DatavaluedPropertyAtom ;
+                                                    ns1:argument1 <http://www.w3.org/2002/07/p> ;
+                                                    ns1:argument2 <http://www.w3.org/2002/07/y> ;
+                                                    ns1:propertyPredicate epi:size ] ;
+                                            rdf:rest [ a ns1:AtomList ;
+                                                    rdf:first [ a ns1:BuiltinAtom ;
+                                                            ns1:arguments [ a rdf:List ;
+                                                                    rdf:first <http://www.w3.org/2002/07/temp> ;
+                                                                    rdf:rest [ a rdf:List ;
+                                                                            rdf:first 100 ;
+                                                                            rdf:rest ( <http://www.w3.org/2002/07/x> ) ] ] ;
+                                                            ns1:builtin <http://www.w3.org/2003/11/swrlb#multiply> ] ;
+                                                    rdf:rest [ a ns1:AtomList ;
+                                                            rdf:first [ a ns1:BuiltinAtom ;
+                                                                    ns1:arguments ( <http://www.w3.org/2002/07/percentage> <http://www.w3.org/2002/07/temp> <http://www.w3.org/2002/07/y> ) ;
+                                                                    ns1:builtin <http://www.w3.org/2003/11/swrlb#divide> ] ;
+                                                            rdf:rest () ] ] ] ] ] ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:DatavaluedPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/pp> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/percentage> ;
+                    ns1:propertyPredicate epi:percentageOfPopulation ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "1 way inverse of measuredDisease measurement" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/d> ;
+                    ns1:propertyPredicate epi:measuredDisease ] ;
+            rdf:rest () ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/d> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/m> ;
+                    ns1:propertyPredicate epi:measurement ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "PropertyChain InfectedBy" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/ip> ;
+                    ns1:propertyPredicate epi:measuredPopulation ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:IndividualPropertyAtom ;
+                            ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                            ns1:argument2 <http://www.w3.org/2002/07/d> ;
+                            ns1:propertyPredicate epi:measuredDisease ] ;
+                    rdf:rest () ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/ip> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/d> ;
+                    ns1:propertyPredicate epi:infectedBy ] ;
+            rdf:rest () ] .
+
+[] a ns1:Imp ;
+    rdfs:label "Property chain timepoint 2" ;
+    ns2:isRuleEnabled true ;
+    rdfs:comment "" ;
+    ns1:body [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/d> ;
+                    ns1:propertyPredicate epi:measuredDisease ] ;
+            rdf:rest [ a ns1:AtomList ;
+                    rdf:first [ a ns1:IndividualPropertyAtom ;
+                            ns1:argument1 <http://www.w3.org/2002/07/m> ;
+                            ns1:argument2 <http://www.w3.org/2002/07/tp> ;
+                            ns1:propertyPredicate epi:timePoint ] ;
+                    rdf:rest () ] ] ;
+    ns1:head [ a ns1:AtomList ;
+            rdf:first [ a ns1:IndividualPropertyAtom ;
+                    ns1:argument1 <http://www.w3.org/2002/07/d> ;
+                    ns1:argument2 <http://www.w3.org/2002/07/tp> ;
+                    ns1:propertyPredicate epi:timePoint ] ;
+            rdf:rest () ] .
+

@@ -95,6 +95,14 @@ epi:populationOf rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://github.com/jkuwalek/vrije-KnD-final-project/ontology/coordinates
+epi:coordinates rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#PopulatedPlace> ;
+                rdfs:range xsd:string ;
+                rdfs:label "coordinates" .
+
+
 ###  http://github.com/jkuwalek/vrije-KnD-final-project/ontology/percentageOfPopulation
 epi:percentageOfPopulation rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;

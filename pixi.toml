@@ -19,6 +19,7 @@ rdflib = ">=7.0.0,<8"
 networkx = ">=3.4.2,<4"
 owlready2 = ">=0.47,<0.48"
 scikit-learn = ">=1.5.2,<2"
+plotly = ">=5.24.1,<6"
 
 [pypi-dependencies]
 onto-tool = "*"
